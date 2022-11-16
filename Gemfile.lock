@@ -1,0 +1,72 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activemodel (7.0.4)
+      activesupport (= 7.0.4)
+    activerecord (7.0.4)
+      activemodel (= 7.0.4)
+      activesupport (= 7.0.4)
+    activesupport (7.0.4)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 1.6, < 2)
+      minitest (>= 5.1)
+      tzinfo (~> 2.0)
+    bond (0.5.1)
+    concurrent-ruby (1.1.10)
+    i18n (1.12.0)
+      concurrent-ruby (~> 1.0)
+    minitest (5.16.3)
+    multi_json (1.15.0)
+    mustermann (3.0.0)
+      ruby2_keywords (~> 0.0.1)
+    rack (2.2.4)
+    rack-protection (3.0.3)
+      rack
+    rack-test (0.6.3)
+      rack (>= 1.0)
+    ripl (0.7.1)
+      bond (~> 0.5.1)
+    ripl-multi_line (0.3.1)
+      ripl (>= 0.3.6)
+    ripl-rack (0.2.1)
+      rack (>= 1.0)
+      rack-test (~> 0.6.2)
+      ripl (>= 0.7.0)
+    ruby2_keywords (0.0.5)
+    sinatra (3.0.3)
+      mustermann (~> 3.0)
+      rack (~> 2.2, >= 2.2.4)
+      rack-protection (= 3.0.3)
+      tilt (~> 2.0)
+    sinatra-activerecord (2.0.26)
+      activerecord (>= 4.1)
+      sinatra (>= 1.0)
+    sinatra-contrib (3.0.3)
+      multi_json
+      mustermann (~> 3.0)
+      rack-protection (= 3.0.3)
+      sinatra (= 3.0.3)
+      tilt (~> 2.0)
+    sqlite3 (1.5.3-arm64-darwin)
+    tilt (2.0.11)
+    tux (0.3.0)
+      ripl (>= 0.3.5)
+      ripl-multi_line (>= 0.2.4)
+      ripl-rack (>= 0.2.0)
+      sinatra (>= 1.2.1)
+    tzinfo (2.0.5)
+      concurrent-ruby (~> 1.0)
+
+PLATFORMS
+  arm64-darwin-21
+
+DEPENDENCIES
+  activerecord
+  sinatra
+  sinatra-activerecord
+  sinatra-contrib
+  sqlite3
+  tux
+
+BUNDLED WITH
+   2.2.3
