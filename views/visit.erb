@@ -1,0 +1,54 @@
+<div class="container">
+  <h2> Записаться в Blades and Cuts! Работаем без выходных с 10:00 до 22:00! </h2>
+  <form action="/visit" method="post" class="input d-flex flex-wrap flex-column align-content-start " >
+    <label>Имя</label>
+    <input  type="text" class="input-group-text " name="user_name">
+    <label>Телефон</label>
+    <input  type="text" class="input-group-text mt-1" name="user_phone" >
+    <label>Дата и время</label>
+    <input  type="text" id="datetimepicker3" class="input-group-text mt-1" name="user_visit_time" ">
+    <label>Мастер</label>
+    <select name="select" class="form-select mb-3" aria-label="Default select example" id="select">
+      <option disabled name="selected" selected>Выберите из списка</option>
+      <% @barbers.each do |barber| %>
+        <option value="<%=barber['name']%>"><%=barber['name']%></option>
+      <%end%>
+    </select>
+    <label>Хотите покрасить волосы? Выберите цвет!</label>
+    <select name="colorpicker" id="colorpicker">
+      <option selected value="no">нет</option>
+      <option value="#7bd148">Green</option>
+      <option value="#5484ed">Bold blue</option>
+      <option value="#a4bdfc">Blue</option>
+      <option value="#46d6db">Turquoise</option>
+      <option value="#7ae7bf">Light green</option>
+      <option value="#51b749">Bold green</option>
+      <option value="#fbd75b">Yellow</option>
+      <option value="#ffb878">Orange</option>
+      <option value="#ff887c">Red</option>
+      <option value="#dc2127">Bold red</option>
+      <option value="#dbadff">Purple</option>
+      <option value="#e1e1e1">Gray</option>
+    </select>
+    <input type="submit" value="Записаться" class="btn btn-primary mt-1" >
+  </form>
+  <%= @message %>
+</div>
+<script type="text/javascript">
+  $(function(){
+    $('#datetimepicker3').datetimepicker({
+      format:'d.m.Y H:i',
+      lang:'ru',
+      allowTimes:[
+  '10:00', '11:00', '12:00', '13:00', '15:00',
+  '16:00', '17:00', '18:00', '19:00', '20:00', '21:00']
+  });
+
+     $('#colorpicker').simplecolorpicker();
+  })
+</script>
+<script type="text/javascript">
+  $(function(){
+    $('#colorpicker').simplecolorpicker();
+  })
+</script>
