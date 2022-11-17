@@ -9,8 +9,10 @@ set :database, {adapter:"sqlite3", database:"barbershop.db"}
 class Client < ActiveRecord::Base
 
 end
-
 class Barber < ActiveRecord::Base
+end
+
+class Contact < ActiveRecord::Base
 end
 
 before do
@@ -37,4 +39,15 @@ post '/visit' do
     user = Client.create(:name => @username, :phone =>@user_phone, :datestamp => @date, :barber => @master, :color =>@color)
     erb :visit
 
+end
+
+get '/contacts' do
+    erb :contacts
+end
+
+post '/contacts' do
+    @user_email = params[:user_email]
+    @user_message = params[:user_message]
+    @message = Contact.create(:email => @user_email, :message => @user_message)
+    erb :contacts
 end
